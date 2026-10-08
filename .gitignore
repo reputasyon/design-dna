@@ -1,0 +1,13 @@
+# Screenshots are never published - they live in private/ (separate repo)
+private/
+inbox/
+refs/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.heic
+*.gif
+*.mp4
+*.mov
+.DS_Store

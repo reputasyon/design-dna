@@ -1,0 +1,8 @@
+#!/bin/sh
+# Safety net: block any image/video from entering the public repo, even with git add -f
+bad=$(git diff --cached --name-only --diff-filter=AM | grep -iE '\.(png|jpe?g|webp|heic|gif|mp4|mov)$|^private/')
+if [ -n "$bad" ]; then
+  echo "pre-commit: screenshots belong in private/, not the public repo:" >&2
+  echo "$bad" >&2
+  exit 1
+fi
